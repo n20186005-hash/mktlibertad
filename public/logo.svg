@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="t d">
+  <title id="t">Guía Mercado Libertad</title><desc id="d">Símbolo inspirado en las cubiertas geométricas del Mercado Libertad.</desc>
+  <rect width="360" height="96" rx="18" fill="#f5eedf"/>
+  <g transform="translate(14 14)">
+    <path d="M6 46 26 18l20 28 20-28 20 28v16H6Z" fill="#9f3f2d"/>
+    <path d="M6 46h80v16H6z" fill="#632719"/>
+    <path d="M26 18 46 46 66 18" fill="none" stroke="#e4ad3f" stroke-width="5" stroke-linejoin="round"/>
+  </g>
+  <text x="116" y="42" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#221911">Mercado Libertad</text>
+  <text x="116" y="68" font-family="Segoe UI,Arial,sans-serif" font-size="14" letter-spacing="2.6" fill="#335b4a">GUÍA INDEPENDIENTE · GDL</text>
+</svg>

@@ -1,0 +1,45 @@
+---
+import LegalLayout from '../components/LegalLayout.astro';
+---
+<LegalLayout title="Configuración de cookies | Guía Mercado Libertad" description="Gestiona las preferencias de cookies de la Guía Mercado Libertad Guadalajara." path="/cookies/">
+  <p class="text-sm font-bold uppercase tracking-[.2em] text-[#9f3f2d]">Privacidad y control</p>
+  <h1 class="mt-3 font-display text-4xl font-bold md:text-5xl">Configuración de cookies</h1>
+  <p class="mt-4 text-sm text-[#776657]">Última actualización: agosto de 2026</p>
+  <div class="prose-policy mt-8">
+    <p>Utilizamos el mínimo de almacenamiento local necesario para recordar tus preferencias. Puedes cambiar esta elección en cualquier momento desde esta página.</p>
+  </div>
+  <form id="cookie-form" class="mt-10 space-y-4" aria-describedby="save-status">
+    <label class="flex items-start justify-between gap-5 rounded-2xl border border-[#d8c7b2] bg-[#fff9ef] p-5"><span><strong>Cookies necesarias</strong><span class="mt-1 block text-sm leading-6 text-[#655548]">Son esenciales para guardar tu selección y mantener funciones básicas. No se pueden desactivar.</span></span><input type="checkbox" checked disabled class="mt-1 h-5 w-5" /></label>
+    <label class="flex items-start justify-between gap-5 rounded-2xl border border-[#d8c7b2] bg-[#fff9ef] p-5"><span><strong>Analítica — Google Analytics</strong><span class="mt-1 block text-sm leading-6 text-[#655548]">Ayuda a entender el uso del sitio mediante estadísticas agregadas. Solo se carga después de tu consentimiento.</span></span><input id="analytics" type="checkbox" class="mt-1 h-5 w-5" /></label>
+    <label class="flex items-start justify-between gap-5 rounded-2xl border border-[#d8c7b2] bg-[#fff9ef] p-5"><span><strong>Preferencias</strong><span class="mt-1 block text-sm leading-6 text-[#655548]">Permite recordar configuraciones del sitio en este navegador.</span></span><input id="preferences" type="checkbox" class="mt-1 h-5 w-5" /></label>
+    <label class="flex items-start justify-between gap-5 rounded-2xl border border-[#d8c7b2] bg-[#f1eee7] p-5 opacity-75"><span><strong>Marketing y publicidad personalizada</strong><span class="mt-1 block text-sm leading-6 text-[#655548]">Este proyecto no utiliza cookies de marketing ni publicidad personalizada.</span></span><input type="checkbox" disabled class="mt-1 h-5 w-5" /></label>
+    <div class="flex flex-wrap gap-3 pt-3"><button type="submit" class="focus-ring rounded-full bg-[#9f3f2d] px-5 py-3 font-bold text-white">Guardar preferencias</button><button id="reject-all" type="button" class="focus-ring rounded-full border border-[#9f3f2d] px-5 py-3 font-bold text-[#632719]">Rechazar opcionales</button></div>
+    <p id="save-status" class="min-h-6 text-sm font-semibold text-[#335b4a]" aria-live="polite"></p>
+  </form>
+  <div class="prose-policy mt-10"><h2>Gestión del consentimiento</h2><p>Tu selección se guarda localmente en el navegador. Si borras los datos del sitio, cambias de navegador o dispositivo, deberás volver a configurar tus preferencias. Desactivar analítica no impide utilizar la guía.</p><h2>Mapa de Google</h2><p>La página principal contiene un mapa incrustado de Google. Al visualizarlo, Google puede recibir datos técnicos de tu navegador conforme a sus propias condiciones. Si prefieres evitar esa interacción, puedes consultar el resto de la guía sin usar el mapa.</p></div>
+  <script is:inline>
+    (() => {
+      const key = 'ml-cookie-preferences';
+      const form = document.getElementById('cookie-form');
+      const analytics = document.getElementById('analytics');
+      const preferences = document.getElementById('preferences');
+      const status = document.getElementById('save-status');
+      const reject = document.getElementById('reject-all');
+      try {
+        const saved = JSON.parse(localStorage.getItem(key) || '{}');
+        analytics.checked = !!saved.analytics;
+        preferences.checked = !!saved.preferences;
+      } catch (_) {}
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        localStorage.setItem(key, JSON.stringify({ necessary: true, analytics: analytics.checked, preferences: preferences.checked }));
+        status.textContent = 'Preferencias guardadas. Los cambios de analítica se aplicarán en la próxima carga de página.';
+      });
+      reject.addEventListener('click', () => {
+        analytics.checked = false; preferences.checked = false;
+        localStorage.setItem(key, JSON.stringify({ necessary: true, analytics: false, preferences: false }));
+        status.textContent = 'Cookies opcionales rechazadas.';
+      });
+    })();
+  </script>
+</LegalLayout>

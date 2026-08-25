@@ -1,0 +1,18 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="es-MX">
+<head><BaseHead title="Página no encontrada | Guía Mercado Libertad" description="La página solicitada no está disponible." /></head>
+<body class="bg-[#f5eedf] text-[#2b2119]">
+  <main class="mx-auto flex min-h-[70vh] max-w-3xl flex-col items-start justify-center px-6 py-20">
+    <p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Error 404</p>
+    <h1 class="mt-4 font-display text-5xl font-bold">Esta ruta no existe.</h1>
+    <p class="mt-5 max-w-xl text-lg leading-8">Puedes volver a la guía principal del Mercado Libertad y continuar con la información histórica, práctica y de movilidad.</p>
+    <a href="/" class="focus-ring mt-8 rounded-full bg-[#9f3f2d] px-5 py-3 font-bold text-white">Volver a la guía</a>
+  </main>
+  <Footer />
+</body>
+</html>

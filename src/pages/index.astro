@@ -1,0 +1,209 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const pageTitle = 'Mercado Libertad (San Juan de Dios) | Guía independiente de visita';
+const description = 'Guía independiente y sin fines de lucro del Mercado Libertad de Guadalajara: historia, arquitectura, horarios, transporte, servicios, comida, accesibilidad y preguntas frecuentes.';
+const placeUrl = Astro.site ? new URL('/', Astro.site).toString() : undefined;
+const imageUrl = Astro.site ? new URL('/images/hero.jpg', Astro.site).toString() : undefined;
+
+const touristSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['TouristAttraction', 'LocalBusiness'],
+  name: 'Mercado Libertad - San Juan de Dios',
+  alternateName: 'Mercado San Juan de Dios',
+  description,
+  ...(placeUrl ? { url: placeUrl } : {}),
+  ...(imageUrl ? { image: imageUrl } : {}),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'C. Dionisio Rodríguez 52, San Juan de Dios',
+    postalCode: '44360',
+    addressLocality: 'Guadalajara',
+    addressRegion: 'Jalisco',
+    addressCountry: 'MX'
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: 20.6755148, longitude: -103.3424271 },
+  openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map((day) => ({
+    '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${day}`, opens: '10:00', closes: '20:00'
+  })),
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.4', reviewCount: '92311', bestRating: '5' },
+  isAccessibleForFree: true,
+  publicAccess: true
+};
+
+const faqItems = [
+  ['¿La entrada al Mercado Libertad tiene costo?', 'El acceso general al mercado es gratuito. Las compras, alimentos, estacionamiento y otros servicios se pagan por separado.'],
+  ['¿Cuál es el horario recomendado para visitar?', 'La ficha turística municipal publica un horario de 10:00 a 20:00 todos los días. Para una visita más cómoda, conviene llegar por la mañana o a primera hora de la tarde y verificar cambios antes de salir.'],
+  ['¿Cómo llegar en transporte público?', 'La estación San Juan de Dios de la Línea 2 del Tren Ligero queda junto al mercado. Mi Macro Calzada y distintas rutas de autobús urbano también sirven al corredor del Centro Histórico.'],
+  ['¿Cuánto tiempo conviene dedicarle?', 'Para conocer la arquitectura, recorrer los tres niveles y hacer una pausa para comer, calcula entre 1.5 y 3 horas. Si tu interés principal es la arquitectura o las compras, puedes ajustar el tiempo.'],
+  ['¿Hay baños y opciones de comida?', 'Sí, por tratarse de un gran mercado público existen servicios sanitarios y zonas de alimentos. La disponibilidad, ubicación exacta y condiciones pueden variar, por lo que conviene seguir la señalización interior.'],
+  ['¿Es un sitio oficial del mercado?', 'No. Esta es una guía independiente, educativa y sin fines de lucro. Para decisiones importantes de viaje se recomienda confirmar horarios, obras, accesos y servicios en fuentes oficiales.']
+];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map(([q,a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
+};
+---
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <BaseHead title={pageTitle} description={description} />
+  <script type="application/ld+json" set:html={JSON.stringify(touristSchema)}></script>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
+</head>
+<body>
+  <header class="sticky top-0 z-40 border-b border-[#6c2b1d]/20 bg-[#f5eedf]/95 backdrop-blur">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+      <a href="#inicio" class="focus-ring shrink-0"><img src="/logo.svg" alt="Guía Mercado Libertad" class="h-11 w-auto md:h-13" /></a>
+      <nav aria-label="Navegación principal" class="hidden items-center gap-5 text-sm font-semibold lg:flex">
+        <a href="#historia" class="hover:text-[#9f3f2d]">Historia</a><a href="#arquitectura" class="hover:text-[#9f3f2d]">Arquitectura</a><a href="#visita" class="hover:text-[#9f3f2d]">Planifica</a><a href="#transporte" class="hover:text-[#9f3f2d]">Transporte</a><a href="#servicios" class="hover:text-[#9f3f2d]">Servicios</a><a href="#faq" class="hover:text-[#9f3f2d]">FAQ</a>
+      </nav>
+      <a href="#mapa" class="focus-ring rounded-full bg-[#9f3f2d] px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-[#7f3022]">Ver mapa</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="relative min-h-[78vh] overflow-hidden bg-[#221911] text-white">
+      <img src="/images/hero.jpg" alt="Vista aérea de las cubiertas geométricas del Mercado Libertad" class="absolute inset-0 h-full w-full object-cover opacity-58" fetchpriority="high" />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#221911]/95 via-[#221911]/65 to-transparent"></div>
+      <div class="roof-pattern absolute inset-0 opacity-30"></div>
+      <div class="relative mx-auto flex min-h-[78vh] max-w-7xl items-end px-5 py-14 md:px-8 md:py-20">
+        <div class="max-w-3xl">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/20 px-4 py-2 text-xs font-bold uppercase tracking-[.18em]">Monumento artístico · Guadalajara, Jalisco</div>
+          <h1 class="font-display text-5xl leading-[.95] font-bold md:text-7xl">Mercado Libertad<br/><span class="text-[#f2c45f]">San Juan de Dios</span></h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-[#f3eadc] md:text-xl">Un mercado vivo, una obra maestra de la arquitectura moderna tapatía y un punto de encuentro donde comercio, comida y memoria urbana conviven bajo las cubiertas de Alejandro Zohn.</p>
+          <div class="mt-8 flex flex-wrap gap-3 text-sm">
+            <a href="#visita" class="focus-ring rounded-full bg-[#e4ad3f] px-5 py-3 font-extrabold text-[#221911]">Preparar la visita</a>
+            <a href="#historia" class="focus-ring rounded-full border border-white/40 bg-white/10 px-5 py-3 font-bold">Conocer su historia</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="market-grid border-b border-[#d8c7b2] bg-[#fff9ef]">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-[#d8c7b2] md:grid-cols-4">
+        <div class="bg-[#fff9ef] p-6"><div class="text-3xl font-bold text-[#9f3f2d]">1958</div><p class="mt-1 text-sm text-[#5a4a3d]">Año de inauguración del mercado actual según Turismo Guadalajara.</p></div>
+        <div class="bg-[#fff9ef] p-6"><div class="text-3xl font-bold text-[#9f3f2d]">3 niveles</div><p class="mt-1 text-sm text-[#5a4a3d]">Comestibles, comida preparada, artesanías y múltiples giros comerciales.</p></div>
+        <div class="bg-[#fff9ef] p-6"><div class="text-3xl font-bold text-[#9f3f2d]">2005</div><p class="mt-1 text-sm text-[#5a4a3d]">Declarado Monumento Artístico de la Nación.</p></div>
+        <div class="bg-[#fff9ef] p-6"><div class="text-3xl font-bold text-[#9f3f2d]">4.4 / 5</div><p class="mt-1 text-sm text-[#5a4a3d]">Valoración mostrada por Google; puede cambiar con nuevas reseñas.</p></div>
+      </div>
+    </section>
+
+    <section id="historia" class="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-24">
+      <div class="grid items-start gap-12 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="lg:sticky lg:top-24">
+          <p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Historia urbana</p>
+          <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Un mercado que nació del barrio</h2>
+          <p class="mt-6 text-lg leading-8 text-[#55473b]">San Juan de Dios tuvo vocación comercial mucho antes del edificio actual. Las crónicas municipales sitúan un mercado formal en 1888; después llegaron reconstrucciones, el entubamiento del antiguo río y, en los años cincuenta, el proyecto que transformaría el lugar en un referente de la arquitectura pública mexicana.</p>
+          <p class="mt-4 leading-8 text-[#55473b]">El mercado actual fue diseñado por Alejandro Zohn. El proyecto entendió el mercado no como una caja cerrada, sino como una versión ordenada del tianguis: patios, rampas, visuales cruzadas, niveles conectados y una cubierta que deja entrar luz entre formas estructurales.</p>
+        </div>
+        <div class="space-y-5">
+          <article class="rounded-[2rem] bg-[#632719] p-7 text-white md:p-9"><span class="text-sm font-bold text-[#f2c45f]">1888</span><h3 class="mt-2 text-2xl font-bold">Primer Mercado Libertad formal</h3><p class="mt-3 leading-7 text-[#ead9cb]">La documentación municipal recuerda la construcción de un primer mercado para ordenar la intensa actividad comercial de la zona de San Juan de Dios.</p></article>
+          <article class="rounded-[2rem] border border-[#d4c0a7] bg-[#fff9ef] p-7 md:p-9"><span class="text-sm font-bold text-[#9f3f2d]">Década de 1920</span><h3 class="mt-2 text-2xl font-bold">Una nueva etapa para el barrio</h3><p class="mt-3 leading-7 text-[#55473b]">El antiguo mercado fue sustituido y el cauce que corría por la actual Calzada Independencia fue entubado, cambiando para siempre la relación entre comercio, movilidad y espacio público.</p></article>
+          <article class="rounded-[2rem] bg-[#335b4a] p-7 text-white md:p-9"><span class="text-sm font-bold text-[#f2c45f]">1958–1959</span><h3 class="mt-2 text-2xl font-bold">La obra de Alejandro Zohn</h3><p class="mt-3 leading-7 text-[#e4eee8]">El nuevo Mercado Libertad se inauguró a finales de 1958. INBAL documenta su relevancia por el uso de concreto aparente, materiales regionales y paraboloides hiperbólicos, con una gran sala central de triple altura.</p></article>
+          <article class="rounded-[2rem] border border-[#d4c0a7] bg-[#fff9ef] p-7 md:p-9"><span class="text-sm font-bold text-[#9f3f2d]">2005</span><h3 class="mt-2 text-2xl font-bold">Monumento Artístico</h3><p class="mt-3 leading-7 text-[#55473b]">El Gobierno de México declaró Monumento Artístico al inmueble por su valor estético, innovación estructural y papel en la arquitectura mexicana orientada al servicio público.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitectura" class="overflow-hidden bg-[#221911] py-18 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <div class="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-center">
+          <div class="overflow-hidden rounded-[2rem]"><img src="/images/interior.jpg" alt="Panorama del interior del Mercado Libertad con su estructura de concreto" class="h-full min-h-[420px] w-full object-cover" loading="lazy" /></div>
+          <div>
+            <p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#f2c45f]">Qué mirar</p>
+            <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">La arquitectura también se recorre</h2>
+            <p class="mt-6 text-lg leading-8 text-[#ded2c0]">INBAL destaca la innovación de sus paraboloides hiperbólicos, el concreto aparente y el uso de materiales regionales como el barro vidriado. El edificio mezcla circulación, estructura y vida cotidiana de una manera que todavía se entiende caminándolo.</p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/15 p-5"><div class="text-2xl">△</div><h3 class="mt-2 font-bold">Cubiertas plegadas</h3><p class="mt-2 text-sm leading-6 text-[#cfc1b0]">Observa la repetición geométrica y cómo aparecen triángulos de luz entre los mantos estructurales.</p></div>
+              <div class="rounded-2xl border border-white/15 p-5"><div class="text-2xl">↗</div><h3 class="mt-2 font-bold">Rampas y visuales</h3><p class="mt-2 text-sm leading-6 text-[#cfc1b0]">Los recorridos permiten mirar varios niveles a la vez y leer el mercado como una pequeña ciudad interior.</p></div>
+              <div class="rounded-2xl border border-white/15 p-5"><div class="text-2xl">▦</div><h3 class="mt-2 font-bold">Modulación</h3><p class="mt-2 text-sm leading-6 text-[#cfc1b0]">La retícula estructural ordena los puestos sin borrar el carácter espontáneo del mercado popular.</p></div>
+              <div class="rounded-2xl border border-white/15 p-5"><div class="text-2xl">◫</div><h3 class="mt-2 font-bold">Patios y escalones</h3><p class="mt-2 text-sm leading-6 text-[#cfc1b0]">Los espacios abiertos recuperan la tradición de plaza y ayudan a conectar interior y exterior.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-24">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div class="md:col-span-3"><p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Cómo leer el mercado</p><h2 class="mt-3 font-display text-4xl font-bold">Tres niveles, muchas capas de Guadalajara</h2></div>
+        <article class="rounded-[2rem] bg-[#fff9ef] p-7 shadow-[0_12px_40px_rgba(71,45,25,.08)]"><span class="text-xs font-black tracking-[.2em] text-[#9f3f2d]">NIVEL 01</span><h3 class="mt-3 text-2xl font-bold">Abasto y color</h3><p class="mt-3 leading-7 text-[#55473b]">Frutas, verduras, dulces típicos, productos de uso cotidiano y artesanías. Es el nivel donde mejor se percibe el ritmo del mercado de abasto.</p></article>
+        <article class="rounded-[2rem] bg-[#e4ad3f] p-7"><span class="text-xs font-black tracking-[.2em] text-[#632719]">NIVEL 02</span><h3 class="mt-3 text-2xl font-bold">Cocina tapatía</h3><p class="mt-3 leading-7 text-[#493313]">Áreas de comida preparada con platos y antojitos tradicionales. Para una guía neutral, conviene elegir por higiene visible, rotación de alimentos y precios exhibidos.</p></article>
+        <article class="rounded-[2rem] bg-[#335b4a] p-7 text-white"><span class="text-xs font-black tracking-[.2em] text-[#f2c45f]">NIVEL 03</span><h3 class="mt-3 text-2xl font-bold">Comercio diverso</h3><p class="mt-3 leading-7 text-[#e4eee8]">Ropa, calzado, artículos de piel, electrónica y otros giros. El inventario cambia con el tiempo y forma parte del carácter dinámico del lugar.</p></article>
+      </div>
+      <figure class="mt-10 grid gap-5 md:grid-cols-[.7fr_1.3fr] md:items-stretch"><img src="/images/produce.jpg" alt="Frutas y piñatas en un pasillo del Mercado San Juan de Dios" class="h-[420px] w-full rounded-[2rem] object-cover" loading="lazy" /><img src="/images/patio.jpg" alt="Patio interior y fachadas de ladrillo del Mercado Libertad" class="h-[420px] w-full rounded-[2rem] object-cover" loading="lazy" /></figure>
+    </section>
+
+    <section id="visita" class="bg-[#fff9ef] py-18 md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Planifica tu visita</p><h2 class="mt-3 max-w-3xl font-display text-4xl font-bold md:text-5xl">Datos prácticos, sin venderte nada</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-3xl border border-[#d8c7b2] p-6"><div class="text-2xl">◷</div><h3 class="mt-3 font-bold">Horario publicado</h3><p class="mt-2 text-sm leading-6 text-[#5b4c40]">10:00–20:00, todos los días, según Turismo Guadalajara. Verifica cambios por festivos, mantenimiento o eventos.</p></div>
+          <div class="rounded-3xl border border-[#d8c7b2] p-6"><div class="text-2xl">$</div><h3 class="mt-3 font-bold">Entrada y gastos</h3><p class="mt-2 text-sm leading-6 text-[#5b4c40]">Acceso general gratuito. Compras, comida, estacionamiento y servicios se pagan por separado.</p></div>
+          <div class="rounded-3xl border border-[#d8c7b2] p-6"><div class="text-2xl">☀</div><h3 class="mt-3 font-bold">Mejor momento</h3><p class="mt-2 text-sm leading-6 text-[#5b4c40]">Mañana o primeras horas de la tarde para disponer de tiempo y evitar llegar cerca del cierre. Fines de semana suelen sentirse más intensos.</p></div>
+          <div class="rounded-3xl border border-[#d8c7b2] p-6"><div class="text-2xl">⌛</div><h3 class="mt-3 font-bold">Duración sugerida</h3><p class="mt-2 text-sm leading-6 text-[#5b4c40]">Entre 1.5 y 3 horas para recorrer niveles, observar la arquitectura y comer con calma.</p></div>
+        </div>
+        <div class="mt-8 rounded-[2rem] bg-[#f0e2cb] p-7 md:p-9"><h3 class="text-xl font-bold">Consejo de visita responsable</h3><p class="mt-3 max-w-4xl leading-8 text-[#55473b]">Es un mercado activo, no un museo. Mantén libres los pasillos, pide permiso antes de fotografiar personas o puestos a corta distancia, cuida tus pertenencias en zonas concurridas y evita bloquear áreas de carga, escaleras o rampas.</p></div>
+      </div>
+    </section>
+
+    <section id="transporte" class="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-24">
+      <div class="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+        <div><p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Transporte detallado</p><h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Llegar sin complicar el Centro</h2><p class="mt-5 leading-8 text-[#55473b]">El mercado está en una de las zonas mejor conectadas del centro de Guadalajara. Por tráfico y demanda de estacionamiento, el transporte público suele ser la opción más predecible.</p><img src="/images/transit.jpg" alt="Señal de la estación San Juan de Dios del sistema SITEUR" class="mt-7 h-80 w-full rounded-[2rem] object-cover" loading="lazy" /></div>
+        <div class="space-y-4">
+          <article class="rounded-3xl border border-[#d4c0a7] p-6"><h3 class="text-xl font-bold">✈ Desde el Aeropuerto Internacional de Guadalajara (GDL)</h3><p class="mt-3 leading-7 text-[#55473b]">El aeropuerto se ubica al sur de la ciudad. GAP informa opciones de taxi autorizado, shuttle, transporte público y otros servicios terrestres. En taxi o vehículo, el tiempo depende del tráfico; la propia terminal estima alrededor de 35 minutos entre el centro y el aeropuerto en condiciones normales.</p><p class="mt-2 text-sm leading-6 text-[#78685a]">Para autobús o shuttle, confirma en la terminal la ruta y parada vigente hacia el Centro Histórico. Desde el centro, combina con Línea 2 o Mi Macro Calzada para el tramo final.</p></article>
+          <article class="rounded-3xl border border-[#d4c0a7] p-6"><h3 class="text-xl font-bold">🚇 Tren Ligero</h3><p class="mt-3 leading-7 text-[#55473b]">La estación <strong>San Juan de Dios</strong> de la Línea 2 está junto al mercado. Es la referencia más sencilla para quienes ya están conectados a la red SITEUR.</p></article>
+          <article class="rounded-3xl border border-[#d4c0a7] p-6"><h3 class="text-xl font-bold">🚌 Autobús y BRT</h3><p class="mt-3 leading-7 text-[#55473b]">Mi Macro Calzada recorre el corredor de Calzada Independencia y existen rutas de autobús urbano en el Centro Histórico. Las rutas pueden modificarse; revisa el planificador oficial de movilidad antes de salir.</p></article>
+          <article class="rounded-3xl border border-[#d4c0a7] p-6"><h3 class="text-xl font-bold">🚕 Taxi y transporte por aplicación</h3><p class="mt-3 leading-7 text-[#55473b]">Pide descenso en un punto legal y seguro alrededor del perímetro del mercado, evitando carriles exclusivos y zonas de carga. Desde el aeropuerto, utiliza los puntos autorizados o indicados por la terminal.</p></article>
+          <article class="rounded-3xl border border-[#d4c0a7] p-6"><h3 class="text-xl font-bold">🚶 A pie y bicicleta</h3><p class="mt-3 leading-7 text-[#55473b]">Desde Plaza Tapatía, Museo Cabañas y el entorno del Teatro Degollado se puede llegar caminando. Turismo Guadalajara también integra el centro a su red de bicicleta pública; en calles muy concurridas conviene bajar de la bicicleta y caminar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="bg-[#335b4a] py-18 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8">
+        <p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#f2c45f]">Servicios que suelen importar al viajero</p><h2 class="mt-3 max-w-3xl font-display text-4xl font-bold md:text-5xl">Qué puedes resolver en la zona</h2>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['WC', 'Hay servicios sanitarios en el complejo; sigue la señalización y considera que pueden existir cuotas o accesos con horarios propios.'],
+            ['Estacionamiento', 'El mercado dispone de áreas de estacionamiento y el municipio registra infraestructura asociada. Cupo y tarifas pueden variar; no se aconseja depender de encontrar lugar en hora pico.'],
+            ['Alimentos', 'Dentro del mercado encontrarás fondas, antojitos y bebidas. Elige de forma neutral por limpieza visible, manejo de alimentos, precios claros y preferencias dietarias.'],
+            ['Accesibilidad', 'El edificio utiliza rampas y circulaciones entre niveles, pero es una construcción histórica muy concurrida. Para necesidades específicas, conviene confirmar accesos y elevadores disponibles antes de la visita.'],
+            ['Alojamiento', 'El Centro Histórico ofrece hoteles, hostales y alojamientos de distintas categorías. Compara ubicación, accesibilidad, ruido, políticas de cancelación y transporte nocturno.'],
+            ['Compras cotidianas', 'En el entorno central hay tiendas de conveniencia, farmacias y comercios de abasto. Esta guía no recomienda establecimientos concretos.'],
+            ['Combustible y carga', 'Las gasolineras y puntos de carga vehicular se concentran mejor fuera de las calles inmediatas del mercado. Planifica una parada antes de entrar al Centro Histórico.'],
+            ['Efectivo y pagos', 'Los métodos de pago pueden variar entre puestos. Lleva una alternativa de pago y evita exhibir cantidades grandes de efectivo en zonas concurridas.']
+          ].map(([title, text]) => <article class="rounded-3xl border border-white/15 bg-white/5 p-6"><h3 class="text-xl font-bold text-[#f2c45f]">{title}</h3><p class="mt-3 text-sm leading-7 text-[#e0ebe5]">{text}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-7xl px-5 py-18 md:px-8 md:py-24">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div><p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Comida alrededor</p><h2 class="mt-3 font-display text-4xl font-bold">Sabores tapatíos, sin ranking comercial</h2><p class="mt-5 leading-8 text-[#55473b]">La cocina es parte de la experiencia del mercado. En lugar de recomendar negocios específicos, estas son categorías y preparaciones representativas que puedes buscar comparando higiene, precio visible y preferencias personales.</p><div class="mt-6 flex flex-wrap gap-3">{['Tortas ahogadas','Birria','Tacos','Pozole','Carne en su jugo','Jugos naturales','Jericalla','Tejuino'].map((x) => <span class="rounded-full border border-[#c8b49a] bg-[#fff9ef] px-4 py-2 text-sm font-semibold">{x}</span>)}</div></div>
+        <div><p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Qué ver cerca</p><h2 class="mt-3 font-display text-4xl font-bold">Continúa por el Centro Histórico</h2><div class="mt-6 space-y-3">
+          <div class="rounded-2xl bg-[#f0e2cb] p-5"><strong>Museo Cabañas</strong><p class="mt-1 text-sm leading-6 text-[#5d4d40]">Patrimonio Mundial y uno de los principales recintos culturales del centro, a corta distancia del mercado.</p></div>
+          <div class="rounded-2xl bg-[#f0e2cb] p-5"><strong>Plaza Tapatía</strong><p class="mt-1 text-sm leading-6 text-[#5d4d40]">Corredor peatonal que conecta el entorno de San Juan de Dios con plazas y edificios cívicos.</p></div>
+          <div class="rounded-2xl bg-[#f0e2cb] p-5"><strong>Teatro Degollado</strong><p class="mt-1 text-sm leading-6 text-[#5d4d40]">Referente neoclásico de Guadalajara y punto natural para continuar una caminata de arquitectura e historia.</p></div>
+          <div class="rounded-2xl bg-[#f0e2cb] p-5"><strong>Catedral y Cruz de Plazas</strong><p class="mt-1 text-sm leading-6 text-[#5d4d40]">Conjunto de plazas cívicas y religiosas que ayuda a leer la evolución urbana del corazón de Guadalajara.</p></div>
+        </div></div>
+      </div>
+    </section>
+
+    <section id="mapa" class="bg-[#632719] py-18 text-white md:py-24">
+      <div class="mx-auto max-w-7xl px-5 md:px-8"><div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end"><div><p class="text-sm font-extrabold uppercase tracking-[.22em] text-[#f2c45f]">Ubicación</p><h2 class="mt-3 font-display text-4xl font-bold">Mercado Libertad, San Juan de Dios</h2><p class="mt-3 text-[#ead9cb]">C. Dionisio Rodríguez 52, San Juan de Dios, 44360 Guadalajara, Jalisco, México</p></div><a href="https://maps.app.goo.gl/Xe7gBQvxz4xU5teq8" rel="noopener noreferrer" target="_blank" class="focus-ring rounded-full border border-white/30 px-5 py-3 text-sm font-bold">Abrir indicaciones ↗</a></div>
+        <div class="overflow-hidden rounded-[2rem] border border-white/15 bg-white/10 p-2"><iframe title="Mapa de Mercado Libertad - San Juan de Dios" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6649.146329399206!2d-103.34242712290137!3d20.675514780886814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b180f8195c15%3A0xb3e9373ea5463503!2sMercado%20Libertad%20-%20San%20Juan%20de%20Dios!5e1!3m2!1ses-419!2smx!4v1787565796303!5m2!1ses-419!2smx" width="100%" height="520" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+      </div>
+    </section>
+
+    <section id="faq" class="mx-auto max-w-5xl px-5 py-18 md:px-8 md:py-24"><p class="text-center text-sm font-extrabold uppercase tracking-[.22em] text-[#9f3f2d]">Preguntas frecuentes</p><h2 class="mt-3 text-center font-display text-4xl font-bold md:text-5xl">Antes de ir</h2><div class="mt-10 space-y-3">{faqItems.map(([q,a]) => <details class="group rounded-2xl border border-[#d4c0a7] bg-[#fff9ef] p-5"><summary class="cursor-pointer list-none font-bold marker:hidden">{q}<span class="float-right text-[#9f3f2d] group-open:rotate-45">＋</span></summary><p class="mt-3 max-w-3xl leading-7 text-[#5d4d40]">{a}</p></details>)}</div></section>
+
+    <section id="fuentes" class="border-t border-[#d8c7b2] bg-[#eee1cd] py-14"><div class="mx-auto max-w-5xl px-5"><h2 class="font-display text-3xl font-bold">Fuentes, metodología y créditos</h2><p class="mt-4 leading-7 text-[#55473b]">Esta guía prioriza fuentes institucionales para historia, patrimonio, movilidad y horarios; usa Google Maps para ubicación y valoración; y evita convertir información práctica en recomendaciones comerciales. Los datos operativos pueden cambiar y deben verificarse antes del viaje.</p><ul class="mt-5 grid gap-3 text-sm leading-6 text-[#55473b] md:grid-cols-2"><li><strong>Gobierno de Guadalajara · Turismo Guadalajara:</strong> descripción, horario, movilidad y Centro Histórico.</li><li><strong>INBAL:</strong> decreto de Monumento Artístico y documentación sobre Alejandro Zohn y la arquitectura del mercado.</li><li><strong>Grupo Aeroportuario del Pacífico:</strong> ubicación del aeropuerto y opciones de transporte terrestre.</li><li><strong>Google Maps:</strong> dirección, coordenadas y valoración agregada mostrada al consultar el lugar.</li></ul>
+          <div class="mt-7 rounded-2xl bg-[#fff9ef] p-5 text-xs leading-6 text-[#6c5b4d]"><strong>Créditos fotográficos:</strong> ProtoplasmaKid (CC BY-SA 4.0), Odette López Cuevas (CC BY-SA 4.0), Eduardo López López (licencia indicada en Wikimedia Commons), Digitaldreamer (CC BY-SA 2.0 DE) y SistemaRayoXP / San Juan de Dios (CC0). Las imágenes se sirven localmente desde este sitio para evitar dependencias de carga externas.</div></div></section>
+  </main>
+  <Footer />
+</body></html>

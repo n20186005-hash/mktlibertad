@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Aptos", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #221911;
+  --paper: #f5eedf;
+  --brick: #9f3f2d;
+  --brick-dark: #632719;
+  --maize: #e4ad3f;
+  --agave: #335b4a;
+  --cream: #fff9ef;
+}
+
+html { scroll-behavior: smooth; background: var(--paper); }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+::selection { background: #e4ad3f; color: #221911; }
+a { text-underline-offset: 3px; }
+
+.market-grid {
+  background-image:
+    linear-gradient(rgba(99,39,25,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,39,25,.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.roof-pattern {
+  background-image: linear-gradient(135deg, transparent 48%, rgba(255,255,255,.15) 49%, rgba(255,255,255,.15) 51%, transparent 52%);
+  background-size: 34px 34px;
+}
+
+.prose-policy h2 { font-family: var(--font-display); font-size: clamp(1.5rem,3vw,2rem); margin-top: 2.2rem; margin-bottom: .75rem; }
+.prose-policy h3 { font-size: 1.1rem; font-weight: 800; margin-top: 1.5rem; }
+.prose-policy p, .prose-policy li { line-height: 1.8; color: #4b4036; }
+.prose-policy ul { padding-left: 1.25rem; list-style: disc; }
+
+.focus-ring:focus-visible { outline: 3px solid var(--maize); outline-offset: 3px; }

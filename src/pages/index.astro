@@ -3,10 +3,15 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
-const pageTitle = 'Mercado Libertad (San Juan de Dios) | Guía independiente de visita';
-const description = 'Guía independiente y sin fines de lucro del Mercado Libertad de Guadalajara: historia, arquitectura, horarios, transporte, servicios, comida, accesibilidad y preguntas frecuentes.';
+const pageTitle = 'Mercado Libertad (San Juan de Dios) Guadalajara | Horarios, mapa y guía';
+const description = 'Visita el Mercado Libertad (San Juan de Dios) en Guadalajara: horarios, cómo llegar en transporte público, qué comer, artesanías y mapa exacto. Guía independiente y gratuita.';
 const placeUrl = Astro.site ? new URL('/', Astro.site).toString() : undefined;
 const imageUrl = Astro.site ? new URL('/images/hero.jpg', Astro.site).toString() : undefined;
+const alternates = [
+  { lang: 'es', href: new URL('/', Astro.site).toString() },
+  { lang: 'en', href: new URL('/en/', Astro.site).toString() },
+  { lang: 'x-default', href: new URL('/', Astro.site).toString() }
+];
 
 const touristSchema = {
   '@context': 'https://schema.org',
@@ -28,7 +33,9 @@ const touristSchema = {
   openingHoursSpecification: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map((day) => ({
     '@type': 'OpeningHoursSpecification', dayOfWeek: `https://schema.org/${day}`, opens: '10:00', closes: '20:00'
   })),
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.4', reviewCount: '92311', bestRating: '5' },
+  hasMap: 'https://www.google.com/maps/place/Mercado+Libertad+-+San+Juan+de+Dios/@20.6755148,-103.3424271,17z',
+  sameAs: ['https://maps.app.goo.gl/Xe7gBQvxz4xU5teq8'],
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.4', reviewCount: '92617', bestRating: '5' },
   isAccessibleForFree: true,
   publicAccess: true
 };
@@ -50,7 +57,7 @@ const faqSchema = {
 <!doctype html>
 <html lang="es-MX">
 <head>
-  <BaseHead title={pageTitle} description={description} />
+  <BaseHead title={pageTitle} description={description} alternates={alternates} />
   <script type="application/ld+json" set:html={JSON.stringify(touristSchema)}></script>
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}></script>
 </head>
@@ -61,6 +68,7 @@ const faqSchema = {
       <nav aria-label="Navegación principal" class="hidden items-center gap-5 text-sm font-semibold lg:flex">
         <a href="#historia" class="hover:text-[#9f3f2d]">Historia</a><a href="#arquitectura" class="hover:text-[#9f3f2d]">Arquitectura</a><a href="#visita" class="hover:text-[#9f3f2d]">Planifica</a><a href="#transporte" class="hover:text-[#9f3f2d]">Transporte</a><a href="#servicios" class="hover:text-[#9f3f2d]">Servicios</a><a href="#faq" class="hover:text-[#9f3f2d]">FAQ</a>
       </nav>
+      <a href="/en/" hreflang="en" lang="en" class="focus-ring rounded-full border border-[#6c2b1d]/30 px-3 py-2 text-xs font-bold text-[#632719] hover:bg-[#632719] hover:text-white">EN</a>
       <a href="#mapa" class="focus-ring rounded-full bg-[#9f3f2d] px-4 py-2 text-sm font-bold text-white shadow-sm hover:bg-[#7f3022]">Ver mapa</a>
     </div>
   </header>

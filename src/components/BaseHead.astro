@@ -4,8 +4,10 @@ interface Props {
   description: string;
   path?: string;
   image?: string;
+  ogLocale?: string;
+  alternates?: { lang: string; href: string }[];
 }
-const { title, description, path = '/', image = '/images/hero.jpg' } = Astro.props;
+const { title, description, path = '/', image = '/images/hero.jpg', ogLocale = 'es_MX', alternates = [] } = Astro.props;
 const canonical = Astro.site ? new URL(path, Astro.site).toString() : undefined;
 const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
 ---
@@ -20,8 +22,9 @@ const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
 {canonical && <link rel="canonical" href={canonical} />}
+{alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="es_MX" />
+<meta property="og:locale" content={ogLocale} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />

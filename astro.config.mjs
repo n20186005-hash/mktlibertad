@@ -1,15 +1,4 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
-
-const configuredSite = process.env.SITE_URL?.trim();
-const site = configuredSite || 'https://mktlibertad.com';
-
-export default defineConfig({
-  site,
-  output: 'static',
-  integrations: [...(site ? [sitemap()] : [])],
-  vite: {
-    plugins: [tailwindcss()]
-  }
-});
+export default defineConfig({site:'https://mktlibertad.com',trailingSlash:'always',output:'static',integrations:[sitemap({filter:(page)=>['https://mktlibertad.com/','https://mktlibertad.com/en/'].includes(page)})],vite:{plugins:[tailwindcss()]}});

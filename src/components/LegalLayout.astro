@@ -7,13 +7,14 @@ const { title, description, path } = Astro.props;
 ---
 <!doctype html><html lang="es-MX"><head><BaseHead title={title} description={description} path={path} /></head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 <header class="border-b border-[#d7c9b5] bg-[#fff9ef]">
   <div class="mx-auto flex max-w-5xl items-center justify-between gap-5 px-5 py-4">
     <a href="/" aria-label="Volver al inicio" class="focus-ring"><img src="/logo.svg" alt="Guía Mercado Libertad" class="h-12 w-auto" /></a>
     <a href="/" class="focus-ring rounded-full border border-[#9f3f2d] px-4 py-2 text-sm font-bold text-[#632719]">Volver a la guía</a>
   </div>
 </header>
-<main class="mx-auto max-w-3xl px-5 py-12 md:py-16">
+<main id="main" class="legal mx-auto max-w-3xl px-5 py-12 md:py-16">
   <slot />
 </main>
 <Footer />

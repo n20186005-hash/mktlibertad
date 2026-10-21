@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mktlibertad.com/sitemap-index.xml

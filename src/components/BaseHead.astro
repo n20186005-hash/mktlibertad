@@ -1,5 +1,6 @@
 ---
 interface Props {
+  noindex?: boolean;
   title: string;
   description: string;
   path?: string;
@@ -7,7 +8,7 @@ interface Props {
   ogLocale?: string;
   alternates?: { lang: string; href: string }[];
 }
-const { title, description, path = '/', image = '/images/hero.jpg', ogLocale = 'es_MX', alternates = [] } = Astro.props;
+const { title, description, path = '/', image = '/images/hero.webp', ogLocale = 'es_MX', alternates = [], noindex = false } = Astro.props;
 const canonical = Astro.site ? new URL(path, Astro.site).toString() : undefined;
 const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
 ---
@@ -17,6 +18,7 @@ const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
 <meta name="description" content={description} />
 <meta name="theme-color" content="#9f3f2d" />
 <title>{title}</title>
+{noindex && <meta name="robots" content="noindex, follow" />}
 <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
@@ -30,21 +32,4 @@ const ogImage = Astro.site ? new URL(image, Astro.site).toString() : image;
 <meta property="og:image" content={ogImage} />
 {canonical && <meta property="og:url" content={canonical} />}
 <meta name="twitter:card" content="summary_large_image" />
-<script is:inline>
-  (() => {
-    try {
-      const raw = localStorage.getItem('ml-cookie-preferences');
-      if (!raw) return;
-      const prefs = JSON.parse(raw);
-      if (!prefs.analytics) return;
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-HXM22WWPKP';
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){ window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', 'G-HXM22WWPKP', { anonymize_ip: true });
-    } catch (_) {}
-  })();
-</script>
+<script is:inline defer src="/js/consent.js"></script>

@@ -1,0 +1,290 @@
+{
+  "locales": {
+    "es": {
+      "title": "Mercado San Juan de Dios (Libertad), Guadalajara | Horarios y mapa",
+      "description": "Mercado Libertad o San Juan de Dios, Guadalajara: horarios con fuentes, dirección y mapa, comida y artesanías, arquitectura de Zohn y transporte. Guía independiente.",
+      "intro": "Mercado Libertad, conocido como San Juan de Dios, es un mercado de Guadalajara. Distingue el horario general publicado de la atención de cada local antes de organizar compras o comida.",
+      "nav": [
+        "Visita",
+        "Historia",
+        "Transporte",
+        "Comida",
+        "Centro",
+        "Preguntas",
+        "Mapa"
+      ],
+      "sections": [
+        [
+          "visita",
+          "Horarios, puestos y visita",
+          "Google Maps muestra lunes a domingo 08:00–20:00 en la ficha consultada el 20 de octubre de 2026. El portal de Turismo del Gobierno de Guadalajara publica 10:00–20:00 los siete días, consultado en la misma fecha. Las fuentes difieren en la apertura: confirma el horario para el día de tu visita. Ninguna franja confirma que todos los locales, comedores o niveles atiendan todo ese tiempo; pregunta al puesto concreto por su descanso y último servicio."
+        ],
+        [
+          "compras",
+          "Qué buscar en los tres niveles",
+          "El portal municipal describe tres niveles con artesanías, ropa, calzado, electrónica y comida. Esa descripción no es un directorio actualizado ni una distribución fija de productos por piso. Pregunta por el local y la ruta interior en el acceso que esté habilitado."
+        ],
+        [
+          "comida",
+          "Qué comer y qué comprar en San Juan de Dios",
+          "El portal turístico municipal menciona tortas ahogadas, birria, tacos y jugos naturales, junto a artesanías, ropa, calzado y electrónica. Son ejemplos de la oferta descrita, no garantía de un platillo o producto disponible hoy. Compara precios y consulta ingredientes directamente; no hay una lista de restaurantes recomendados o inventario de tiendas en esta guía."
+        ],
+        [
+          "historia",
+          "Historia y arquitectura: fechas con contexto",
+          "La página turística municipal sitúa la inauguración en 1958. El decreto del INBAL describe la obra de Alejandro Zohn Rosenthal como realizada en 1959; son atribuciones distintas, no una fecha única de finalización verificada. La lista del INBAL registra el 4 de abril de 2005 como fecha de publicación de la declaratoria de Monumento Artístico."
+        ],
+        [
+          "arquitectura",
+          "Mirar el edificio sin confundirlo con un plano actual",
+          "INBAL destaca las cubiertas de paraboloides hiperbólicos y el uso de concreto aparente y ladrillo de barro vidriado. Los planos y fotografías históricos ayudan a reconocer el edificio, pero no demuestran que una escalera, pasarela o acceso concreto esté abierto hoy."
+        ],
+        [
+          "transporte",
+          "Llegar a San Juan de Dios",
+          "Consulta la red y los avisos de SITEUR para ubicar la estación San Juan de Dios de la Línea 2. Verifica antes del viaje tarifa, servicio y acceso apropiado. La ubicación de una estación no garantiza un trayecto sin escalones ni que todas sus salidas estén abiertas. Para taxi o transporte privado, acuerda un punto legal de descenso; el pin no es una entrada confirmada."
+        ],
+        [
+          "aeropuerto",
+          "Desde el aeropuerto y en Mi Macro Calzada",
+          "SITEUR incluye Mercado San Juan de Dios entre los puntos conectados por Mi Macro Calzada. Para salir del Aeropuerto Internacional de Guadalajara (GDL), GAP publica opciones como taxis autorizados, shuttle y transporte público. Consulta al operador la parada, conexiones y tarifa de tu viaje antes de salir; no se promete un shuttle directo al mercado ni un tiempo fijo de traslado."
+        ],
+        [
+          "servicios",
+          "Comida, pagos y necesidades de acceso",
+          "Pregunta al vendedor el precio total, forma de pago y condiciones antes de pedir. Si tienes alergias, consulta ingredientes y posible contacto cruzado; esta guía no certifica higiene ni ausencia de alérgenos. Consulta en el lugar la disponibilidad, ubicación y coste de baños, estacionamiento o asistencia: no hay un inventario actual verificado en esta guía."
+        ],
+        [
+          "cerca",
+          "Continuar por el Centro Histórico",
+          "La guía municipal de barrios incluye en el Centro Histórico Museo Cabañas, Plaza Tapatía, Teatro Degollado y Catedral Metropolitana, además del Mercado Libertad. Son lugares distintos para investigar si quieres ampliar la visita. Comprueba para cada destino su ubicación, entrada habilitada, horario y posible tarifa; no se afirma una ruta peatonal continua, acceso conjunto o apertura simultánea."
+        ],
+        [
+          "convivencia",
+          "Recorrer un mercado en funcionamiento",
+          "Deja libres los pasillos y zonas de trabajo, respeta las indicaciones del lugar y pide permiso antes de fotografiar personas o puestos de cerca. Ajusta la duración de la visita a tus intereses y al horario confirmado de los comercios; no hay un tiempo de recorrido obligatorio."
+        ]
+      ],
+      "faq": [
+        [
+          "¿Mercado Libertad y San Juan de Dios son el mismo mercado?",
+          "Sí. El portal turístico municipal presenta Mercado Libertad como el mercado mejor conocido como San Juan de Dios, en Guadalajara."
+        ],
+        [
+          "¿Cuál es el horario del Mercado Libertad?",
+          "Las fuentes difieren: Google Maps muestra lunes a domingo 08:00–20:00 y Turismo de Guadalajara publica 10:00–20:00 los siete días, consultados el 20 de octubre de 2026. Confirma el día de tu visita y el horario del local concreto; no son una garantía para todos los puestos o niveles."
+        ],
+        [
+          "¿Cada piso o puesto abre a la misma hora?",
+          "No se ha verificado un horario único para todos los puestos o niveles. Confirma directamente con el vendedor o la administración, especialmente para comida, festivos y último servicio."
+        ],
+        [
+          "¿Hay entrada gratuita o una tarifa fija?",
+          "Esta guía no ha verificado una tarifa vigente de acceso ni cargos de servicios. Consulta en el lugar cualquier cobro aplicable y confirma los precios de compras y comida antes de pagar."
+        ],
+        [
+          "¿Qué transporte puedo consultar?",
+          "SITEUR es la fuente del operador para la Línea 2 y la estación San Juan de Dios. Consulta su red y avisos vigentes; no se garantiza una salida concreta, tiempo de caminata ni acceso sin escalones."
+        ],
+        [
+          "¿Es una web oficial del mercado?",
+          "No. Es una guía independiente: no vende entradas, no recibe reservas y no representa a comerciantes ni autoridades."
+        ]
+      ]
+    },
+    "en": {
+      "title": "San Juan de Dios Market (Mercado Libertad), Guadalajara | Hours and map",
+      "description": "Visit Mercado Libertad, Guadalajara’s San Juan de Dios Market: sourced hours, address and map, food and crafts, Zohn architecture and transport. Independent guide.",
+      "intro": "Mercado Libertad, better known as San Juan de Dios, is a Guadalajara market. Separate the published market schedule from each business’s opening hours when planning shopping or a meal.",
+      "nav": [
+        "Visit",
+        "History",
+        "Transport",
+        "Food",
+        "City centre",
+        "Questions",
+        "Map"
+      ],
+      "sections": [
+        [
+          "visita",
+          "Opening hours and individual businesses",
+          "Google Maps lists Monday–Sunday 08:00–20:00 for the place, checked on 20 October 2026. Guadalajara municipal tourism publishes 10:00–20:00 every day, checked on the same date. The sources differ on opening time: confirm the schedule for your visiting date. Neither schedule establishes that all stalls, dining businesses or levels operate throughout that period; ask the particular trader about closing days and last service."
+        ],
+        [
+          "compras",
+          "What to look for across the three levels",
+          "The municipal tourism page describes three levels with crafts, clothing, shoes, electronics and food. This is not a current shop directory or a fixed floor-by-floor product plan. Ask for the business and interior route at an entrance that is operating."
+        ],
+        [
+          "comida",
+          "Food, crafts and shopping at San Juan de Dios",
+          "Municipal tourism mentions tortas ahogadas, birria, tacos and fresh juices, alongside crafts, clothing, shoes and electronics. These are examples of the described offer, not a promise that a dish or product is available today. Compare prices and ask about ingredients directly; this guide does not provide a recommended restaurant list or current store inventory."
+        ],
+        [
+          "historia",
+          "History and architecture: dates in context",
+          "The municipal tourism page dates the inauguration to 1958. The INBAL decree describes Alejandro Zohn Rosenthal’s work as carried out in 1959; these are separate source attributions rather than a single verified completion date. INBAL’s list records 4 April 2005 as the publication date of the Artistic Monument declaration."
+        ],
+        [
+          "arquitectura",
+          "Reading the building, not assuming today’s access",
+          "INBAL highlights hyperbolic-paraboloid roofs, exposed concrete and glazed clay brick. Historical plans and photographs help identify the architecture but do not establish that any particular stairway, footbridge or entrance is open today."
+        ],
+        [
+          "transporte",
+          "Getting to San Juan de Dios",
+          "Use SITEUR’s network and service notices to locate San Juan de Dios station on Line 2. Check the fare, service and suitable access before travelling. A station’s location does not guarantee a step-free route or that all exits are open. Agree a legal drop-off point for a taxi or private vehicle; a map pin is not a confirmed entrance."
+        ],
+        [
+          "aeropuerto",
+          "From the airport and by Mi Macro Calzada",
+          "SITEUR includes Mercado San Juan de Dios among the places connected by Mi Macro Calzada. For leaving Guadalajara International Airport (GDL), GAP publishes options including authorised taxis, shuttle and public transport. Check your stop, connections and fare with the operator before departure; a direct market shuttle or fixed journey time is not promised."
+        ],
+        [
+          "servicios",
+          "Food, payment and access needs",
+          "Ask the trader for the total price, accepted payment and terms before ordering. Discuss ingredients and cross-contact if you have allergies; this guide does not certify hygiene or allergen-free food. Ask locally about availability, location and charges for toilets, parking or assistance: this guide has no verified current facilities inventory."
+        ],
+        [
+          "cerca",
+          "Exploring the Historic Centre",
+          "The municipal neighbourhood guide includes Museo Cabañas, Plaza Tapatía, Teatro Degollado and Catedral Metropolitana in the Historic Centre, alongside Mercado Libertad. These are separate places to research if extending your visit. Check each destination’s location, operating entrance, hours and possible fee; a continuous walking route, combined admission or simultaneous opening is not established here."
+        ],
+        [
+          "convivencia",
+          "Visiting a working market",
+          "Keep aisles and working areas clear, follow local instructions and ask permission before photographing people or stalls at close range. Adapt your visit to your interests and confirmed business hours; there is no required tour duration."
+        ]
+      ],
+      "faq": [
+        [
+          "Are Mercado Libertad and San Juan de Dios the same market?",
+          "Yes. Municipal tourism describes Mercado Libertad as the market better known as San Juan de Dios, in Guadalajara."
+        ],
+        [
+          "What are Mercado Libertad’s opening hours?",
+          "The sources differ: Google Maps lists Monday–Sunday 08:00–20:00, while Guadalajara municipal tourism publishes 10:00–20:00 every day, both checked on 20 October 2026. Confirm your visiting date and the particular business’s hours; neither is a guarantee for all stalls or levels."
+        ],
+        [
+          "Does every level or stall keep the same hours?",
+          "A single schedule for all stalls or levels has not been verified. Check directly with the trader or administration, especially for food, holidays and last service."
+        ],
+        [
+          "Is entry free or is there a fixed fee?",
+          "This guide has not verified a current admission fee or service charges. Ask locally about any applicable charge and confirm shopping and food prices before paying."
+        ],
+        [
+          "Which transport source should I use?",
+          "SITEUR is the operator source for Line 2 and San Juan de Dios station. Check its current network and notices; a particular exit, walking time or step-free route is not guaranteed."
+        ],
+        [
+          "Is this the official market website?",
+          "No. This independent guide does not sell tickets, take reservations or represent traders or authorities."
+        ]
+      ]
+    }
+  },
+  "sources": [
+    {
+      "url": "https://tequiero.guadalajara.gob.mx/lugares/mercado-san-juan-de-dios",
+      "es": "Turismo del Gobierno de Guadalajara: mercado, tres niveles y horario publicado",
+      "en": "Guadalajara municipal tourism: market, three levels and published hours"
+    },
+    {
+      "url": "https://inba.gob.mx/multimedia/transparencia/inmuebles/19/19-ARCH-19_mercado_libertad.pdf",
+      "es": "INBAL: decreto del Mercado Libertad y obra de Alejandro Zohn",
+      "en": "INBAL: Mercado Libertad decree and Alejandro Zohn’s work"
+    },
+    {
+      "url": "https://inba.gob.mx/ESites/inmueblesdeclaradosmonumentosartisticos",
+      "es": "INBAL: inmuebles declarados Monumentos Artísticos y fecha de publicación",
+      "en": "INBAL: declared Artistic Monuments and publication dates"
+    },
+    {
+      "url": "https://www.siteur.gob.mx/index.php/sistemas-de-transporte/mi-tren",
+      "es": "SITEUR: Mi Tren, red y avisos del operador",
+      "en": "SITEUR: Mi Tren network and operator notices"
+    },
+    {
+      "url": "https://www.siteur.gob.mx/index.php/sistemas-de-transporte/mi-macro",
+      "es": "SITEUR: Mi Macro Calzada y conexión con Mercado San Juan de Dios",
+      "en": "SITEUR: Mi Macro Calzada and Mercado San Juan de Dios connection"
+    },
+    {
+      "url": "https://www.aeropuertosgap.com.mx/es/comunicados-generales/5097-movilidad-terrestre-en-el-aeropuerto-de-guadalajara-opciones-para-cada-perfil-de-viajero.html",
+      "es": "GAP: opciones de movilidad terrestre del aeropuerto de Guadalajara",
+      "en": "GAP: Guadalajara airport ground transport options"
+    },
+    {
+      "url": "https://tequiero.guadalajara.gob.mx/planea-tu-viaje/explora/guia-de-barrios",
+      "es": "Turismo Guadalajara: lugares del Centro Histórico",
+      "en": "Guadalajara tourism: Historic Centre places"
+    }
+  ],
+  "photos": [
+    {
+      "name": "hero",
+      "original": 1,
+      "author": "ProtoplasmaKid",
+      "date": "2022-03-06",
+      "source": "https://commons.wikimedia.org/wiki/File:Interior_del_Mercado_San_Juan_de_Dios.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "es": "Edificio del mercado y patio fotografiados en 2022",
+      "en": "Market building and courtyard photographed in 2022"
+    },
+    {
+      "name": "interior",
+      "original": 2,
+      "author": "Digitaldreamer",
+      "date": "2007-05-23",
+      "source": "https://commons.wikimedia.org/wiki/File:Mercado_Libertad_Guadalajara_interior_panorama_shot.jpg",
+      "licence": "CC BY-SA 2.0 Germany",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/",
+      "es": "Vista interior del mercado en 2007",
+      "en": "Market interior in 2007"
+    },
+    {
+      "name": "produce",
+      "original": 5,
+      "author": "ODETTE LOPEZ CUEVAS",
+      "date": "2019-10-20",
+      "source": "https://commons.wikimedia.org/wiki/File:Mercado_San_Juan_de_Dios,_Guadalajara,_Jalisco,_México.jpg",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "es": "Pasillo con fruta y piñatas fotografiado en 2019",
+      "en": "Aisle with fruit and piñatas photographed in 2019"
+    },
+    {
+      "name": "patio",
+      "original": 3,
+      "author": "Eduardo López López",
+      "date": "2016-06-04",
+      "source": "https://commons.wikimedia.org/wiki/File:Patio_interior_del_mercado_San_Juan_de_Dios.jpeg",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "es": "Patio del mercado fotografiado en 2016",
+      "en": "Market courtyard photographed in 2016"
+    },
+    {
+      "name": "transit",
+      "original": 6,
+      "author": "San Juan de Dios / SistemaRayoXP",
+      "date": "2022-08-08",
+      "source": "https://commons.wikimedia.org/wiki/File:SITEUR_L2_San_Juan_de_Dios.jpg",
+      "licence": "CC0 1.0",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "es": "Señal de la estación San Juan de Dios fotografiada en 2022",
+      "en": "San Juan de Dios station sign photographed in 2022"
+    }
+  ],
+  "maps": {
+    "checked": "2026-10-20",
+    "latitude": 20.6755148,
+    "longitude": -103.3398522,
+    "address": "C. Dionisio Rodríguez 52, San Juan de Dios, 44360 Guadalajara, Jalisco, México",
+    "rating": 4.4,
+    "reviews": 92713
+  }
+}

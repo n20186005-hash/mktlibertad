@@ -1,48 +1,15 @@
-# Guía Mercado Libertad Guadalajara
+# Mercado Libertad visitor guide
 
-Sitio informativo independiente y sin fines de lucro dedicado al Mercado Libertad / San Juan de Dios de Guadalajara, Jalisco.
+Independent Spanish and English visitor guide with Spanish legal pages. It does not represent the market or traders and does not sell tickets or take reservations.
 
-## Stack
+## Build
 
-- Astro 7 + TypeScript 6 (TypeScript 7 no se usa porque `@astrojs/check` todavía requiere la API programática disponible en TypeScript 6.x).
-- Tailwind CSS 4 mediante `@tailwindcss/vite`.
-- pnpm fijado mediante `packageManager`.
-- Cloudflare Workers Static Assets mediante Wrangler, sin base de datos, login ni CMS.
+Use the pinned Node and pnpm versions in package.json. Run `pnpm install --frozen-lockfile`, `pnpm check` and `pnpm build`. Cloudflare builds from source; generated dist remains ignored and untracked, as in the baseline. `pnpm exec wrangler deploy --dry-run` validates the Worker bundle without publishing.
 
-## Desarrollo
+The Worker project is `mktlibertad`, identified from the repository’s official Cloudflare build check. ASSETS serves generated files; the Worker handles HTTPS/apex redirects and true noindex 404 responses. No absolute-URL _redirects rules are required.
 
-```bash
-corepack enable
-pnpm install --frozen-lockfile
-pnpm check
-pnpm build
-```
+## Editorial scope
 
-## Dominio / `site`
+Sources checked 20 October 2026 are linked in the guide. Municipal inauguration and INBAL work dates are attributed separately. A published general schedule does not establish every trader’s hours, entrance availability or facilities. Transport details must be checked with SITEUR. Photographs are dated and individually credited; source and licence records are in PHOTO-CREDITS.md.
 
-No se incluye ningún dominio ficticio. El único punto de configuración del dominio es el campo `site` de `astro.config.mjs`, alimentado por `SITE_URL`.
-
-```bash
-SITE_URL=https://tu-dominio-real.mx pnpm build
-```
-
-Sin `SITE_URL`, el sitio sigue construyendo correctamente: no se genera sitemap y las etiquetas que requieren URL absoluta se omiten o degradan a rutas relativas.
-
-## Cloudflare Workers Static Assets
-
-`wrangler.jsonc` vive únicamente en la raíz y apunta a `./dist`. No se copia a `dist/`, por lo que no existe el riesgo de resolver `dist/client/dist/client` por rutas relativas duplicadas. El proyecto no usa el mecanismo de Pages ni un `dist/client/wrangler.json` generado.
-
-```bash
-pnpm build
-pnpm deploy
-```
-
-También funciona con un `npx wrangler deploy` ejecutado desde la raíz porque `assets.directory` está presente en `wrangler.jsonc`; el despliegue no depende de un argumento `--assets` oculto en scripts.
-
-## Fuentes principales
-
-- Turismo Guadalajara / Gobierno de Guadalajara.
-- Instituto Nacional de Bellas Artes y Literatura (INBAL).
-- Grupo Aeroportuario del Pacífico.
-- Google Maps para ubicación y valoración agregada.
-- Wikimedia Commons para fotografías reales con licencias abiertas.
+Google Analytics is optional and off by default. Consent uses strict booleans; a failed permanent refusal is backed by a tab-session veto where storage works. If both stores fail, the message states that only the current page is protected. No account, booking, contact form or email submission exists. Maps are external links.
